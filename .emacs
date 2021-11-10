@@ -54,3 +54,7 @@ With negative N, comment out original line and use the absolute value."
 
 ;; Keybind for seaching through buffers.
 (global-set-key (kbd "C-c f") 'multi-occur)
+
+;; Displays line numbers in programming mode.
+;; https://emacs.stackexchange.com/questions/278/how-do-i-display-line-numbers-in-emacs-not-in-the-mode-line.
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
