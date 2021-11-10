@@ -58,3 +58,14 @@ With negative N, comment out original line and use the absolute value."
 ;; Displays line numbers in programming mode.
 ;; https://emacs.stackexchange.com/questions/278/how-do-i-display-line-numbers-in-emacs-not-in-the-mode-line.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Opens the config with C-c o.
+(defun visit-config ()
+  (interactive)
+  (find-file "~/.emacs"))
+(global-set-key (kbd "C-c o") 'visit-config)
+
+;; Move fast using alt and arrow keys.
+(global-set-key (kbd "M-<up>") (kbd "M-v"))
+(global-set-key (kbd "M-<down>") (kbd "C-v"))
+
