@@ -69,3 +69,8 @@ With negative N, comment out original line and use the absolute value."
 (global-set-key (kbd "M-<up>") (kbd "M-v"))
 (global-set-key (kbd "M-<down>") (kbd "C-v"))
 
+;; Runs Dired on startup.
+(defun init-dired ()
+  (interactive)
+  (dired "~/"))
+(add-hook 'after-init-hook 'init-dired)
