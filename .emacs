@@ -3,7 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (wombat))))
+ '(custom-enabled-themes (quote (wombat)))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(package-selected-packages (quote (markdown-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,8 +26,7 @@
 
 ;; Defaults to full-screen mode.
 ;; https://www.emacswiki.org/emacs/FullScreen
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 
 ;; Duplicates a line with C-c d.
 ;; https://stackoverflow.com/questions/88399/how-do-i-duplicate-a-whole-line-in-emacs#88737
@@ -74,3 +75,11 @@ With negative N, comment out original line and use the absolute value."
   (interactive)
   (dired "~/"))
 (add-hook 'after-init-hook 'init-dired)
+
+;; Markdown mode.
+;; Make sure to run M-x package-install RET markdown-mode RET.
+;; https://jblevins.org/projects/markdown-mode/
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
